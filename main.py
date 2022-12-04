@@ -1,7 +1,7 @@
 import sys
-from PyQt5 import uic
 from random import randrange
-from PyQt5.QtWidgets import QMainWindow, QApplication, QPushButton
+from PyQt5.QtWidgets import QMainWindow, QApplication
+from style import Ui_MainWindow
 from PyQt5.QtGui import QColor, QPainter
 from PyQt5 import QtCore, QtWidgets
 
@@ -12,10 +12,10 @@ if hasattr(QtCore.Qt, 'AA_UseHighDpiPixmaps'):
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 
-class Suprematism(QMainWindow):
+class Suprematism(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('style.ui', self)
+        self.setupUi(self)
         self.initUi()
 
     def initUi(self):
